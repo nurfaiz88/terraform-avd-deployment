@@ -9,8 +9,8 @@ terraform {
 
 provider "azurerm" {
   features {}
-  tenant_id       = "09bae107-01ec-4e8d-9615-28ada313931e"
-  subscription_id = "c12a2736-d18a-4b6b-ad75-4dd99997a67f"
+  tenant_id       = "Input your tenant ID here"
+  subscription_id = "Input your subscription ID here"
 }
 
 resource "azurerm_resource_group" "main" {
@@ -168,8 +168,8 @@ resource "azurerm_windows_virtual_machine" "main" {
   resource_group_name   = azurerm_resource_group.main.name
   network_interface_ids = [azurerm_network_interface.nic[count.index].id]
   size                  = "Standard_B2ms"
-  admin_username        = "adminuser"
-  admin_password        = "P@ssw0rd1234!Secure"
+  admin_username        = "Input your admin username here"
+  admin_password        = "Input your admin password here"
 
   os_disk {
     name                 = "osdisk-nadia-therapist-dev-${count.index}"
